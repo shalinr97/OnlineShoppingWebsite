@@ -1,0 +1,29 @@
+<a href="http://localhost:3000/admin/logout">Logout</a>
+
+
+<%= notice %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+<div style="width:400px; height:auto">
+
+</div>
+<%= image_tag(@product.image, style:'width:25vw') %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

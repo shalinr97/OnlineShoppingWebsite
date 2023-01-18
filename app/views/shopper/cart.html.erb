@@ -1,0 +1,52 @@
+<%= form_with(model: @shopper) do |form| %>
+  <%= form.submit :"Back", name: "back", value: "Back" %>
+<% end %>
+
+<h2 style="color:skyblue;">Review your shopping cart</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Product Quantity</th>
+      <th>Total Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @userCart.each do |cartItem| %>
+      <tr>
+        <%= form_with(model: @shopper) do |form| %>
+          <td><%= cartItem.productName %></td>
+          <%= form.hidden_field :cartItemProductName, value: cartItem.productName %>
+
+          <td><%= cartItem.quantity %></td>
+          <%= form.hidden_field :cartItemQuantity, value: cartItem.quantity %>
+
+          <td><%= cartItem.cost %></td>
+          <%= form.hidden_field :cartItemCost, value: cartItem.cost %>
+
+          <td><div class="actions">
+            <%= form.submit :"+", name: "addItem", value: "+" %>
+            <%= form.submit :"-", name: "removeItem", value: "-" %>
+          </div></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_with(model: @shopper) do |form| %>
+
+  <%= form.label :Name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :Address %>
+  <%= form.text_field :address %>
+
+  <%= form.label :"Credit Card Number" %>
+  <%= form.text_field :creditCardNo %>
+
+  <%= form.submit :"Place Order", name: "placeOrder", value: "Place Order" %>
+<% end %>

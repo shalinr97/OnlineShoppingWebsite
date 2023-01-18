@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderid: MyString
+  userid: MyString
+  productName: MyString
+  quantity: 1
+  price: 1.5
+
+two:
+  orderid: MyString
+  userid: MyString
+  productName: MyString
+  quantity: 1
+  price: 1.5

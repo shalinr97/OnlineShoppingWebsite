@@ -1,0 +1,24 @@
+<div class = "shopper">
+  <br><h3><a href = "http://localhost:3000/">Home</a></h3>
+  <%= notice %>
+
+  <%= form_with(model: @shopper) do |form| %>
+  <div class="field">
+    <h3>
+    <%= form.label :UserName %>
+    <%= form.text_field :userid %>
+    </h3>
+  </div>
+
+  <div class="field">
+    <h3>
+    <%= form.label :Password %>
+    <%= form.password_field :password %>
+    </h3>
+  </div>
+
+  <div class="field">
+    <%= form.submit :Login %>
+  </div>
+  <% end %>
+</div>
